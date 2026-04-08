@@ -14,8 +14,10 @@ function calcGasAvg(){
         total = parseFloat(prompt(`Enter your weekly gas total. Enter -1 when you are finished.`));
     } 
 
+    let averageGas = runningTotal/entryCount;
+
     if(entryCount > 0){
-        return runningTotal/entryCount;
+        return averageGas;
     }
 
     else{
@@ -25,8 +27,8 @@ function calcGasAvg(){
 }
 
 
-let gasAv = calcGasAvg();
-confirm(`${userName}'s average gas spending per week is $${gasAv.toFixed(2)}`);
+let gas = calcGasAvg();
+confirm(`${userName}'s average gas spending per week is $${gas.toFixed(2)}`);
 
 if(entryCount === 0){
     confirm(`No gas totals were entered.`);
